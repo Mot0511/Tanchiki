@@ -13,7 +13,7 @@ class Tank(pg.sprite.Sprite):
         self.player = player
         self.spawn_point = position
         self.base_image = load_image('tank_blue.png') if player == 1 else load_image('tank_red.png')
-        self.base_image = pg.transform.scale(self.base_image, (90, 100))
+        self.base_image = pg.transform.scale(self.base_image, (70, 80))
         self.image = self.base_image
         self.image = pg.transform.rotate(self.base_image, 180)
         self.rect = self.image.get_rect()

@@ -3,26 +3,27 @@ import pygame as pg
 from sprites.borders import Border
 from sprites.tank import Tank
 from enums import Directions
-from sprites.map import Map
+from utils.initMap import initMap
 
 if __name__ == '__main__':
     pg.init()
-    size = width, height = 1280, 920
+    size = width, height = 1080, 620
     sc = pg.display.set_mode(size)
     pg.display.set_caption('Танчики')
 
     all = pg.sprite.Group()
     solids = pg.sprite.Group()
 
+    initMap(all, solids, width, height)
+
     tank1 = Tank(all, solids, 1, (10, 10))
-    tank2 = Tank(all, solids, 2, (width - 150, height - 115  ))
+    tank2 = Tank(all, solids, 2, (width - 110, height - 100))
 
     Border(all, solids, 0, 0, width, 0)
     Border(all, solids, 0, height - 0, width, height)
     Border(all, solids, 0, 0, 0, height)
     Border(all, solids, width, 0, width, height)
 
-    map1 = Map(all, solids)
 
     clock = pg.time.Clock()
     running = True
