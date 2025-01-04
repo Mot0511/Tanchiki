@@ -12,3 +12,8 @@ def initMap(all, solids, width, height):
     Wall(all, solids, (550, 500), (30, 150))
     Wall(all, solids, (600, 250), (30, 100))
     Wall(all, solids, (width - 200, height - 130), (200, 30))
+    Wall(all, solids, (750, 500), (30, 150))
+    Wall(all, solids, (800, 350), (200, 30))
+    Wall(all, solids, (width - 200, 200), (200, 30))
+    Wall(all, solids, (width - 200, 100), (30, 100))
+    Wall(all, solids, (580, 120), (200, 30))

@@ -2,7 +2,7 @@ import pygame as pg
 import os
 
 def load_image(name, colorkey=None):
-    fullname = os.path.join('assets', name)
+    fullname = os.path.join('assets', 'images', name)
     try:
         image = pg.image.load(fullname).convert()
     except pg.error as message:

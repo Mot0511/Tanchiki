@@ -1,4 +1,6 @@
 import pygame as pg
+
+from utils.load_sound import load_sound
 from utils.load_image import load_image
 
 class Bullet(pg.sprite.Sprite):
@@ -14,6 +16,8 @@ class Bullet(pg.sprite.Sprite):
         self.vx = vx
         self.vy = vy
 
+        self.shoot_on_wall_sound = load_sound('shoot_on_wall.mp3')
+
     def update(self):
         self.rect = self.rect.move(self.vx, self.vy)
         enemies = pg.sprite.spritecollide(self, self.all, False)
@@ -23,4 +27,6 @@ class Bullet(pg.sprite.Sprite):
                 if enemy == self:
                     enemy.kill()
                 elif type(enemy).__name__ == 'Tank':
-                    enemy.rect.topleft = enemy.spawn_point
+                    enemy.dead()
+                else:
+                    self.shoot_on_wall_sound.play()
