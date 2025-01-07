@@ -36,14 +36,19 @@ class Lucky(pg.sprite.Sprite):
                 tank.enemy.dead()
                 return
 
-            low_bonus = random.randrange(0, 3)
-            if 0 == low_bonus:
-                tank.v += 2
-                return
+            else:
+                low_bonus = random.randrange(0, 3)
+                if 0 == low_bonus:
+                    tank.v += 0.2
+                    tank.image = pg.transform.scale(tank.image, (tank.rect.width - 3, tank.rect.height - 3))
+                    tank.base_image = pg.transform.scale(tank.base_image, (tank.rect.width - 3, tank.rect.height - 3))
+                    x = tank.rect.x
+                    y = tank.rect.y
+                    tank.rect = tank.image.get_rect()
+                    tank.rect.x = x
+                    tank.rect.y = y
+                    return
 
-            elif 1 == low_bonus:
-                tank.bullet_v += 2
-                return
-
-
-
+                elif 1 == low_bonus:
+                    tank.bullet_v += 2
+                    return
