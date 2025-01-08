@@ -1,3 +1,6 @@
 **TODO**
-- Improvements
-- Temporary protect after respawn
+- Presentation
+
+**BUGS**
+
+- Necessity of double-click on button sometimes

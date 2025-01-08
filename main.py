@@ -14,8 +14,9 @@ if __name__ == '__main__':
     size = width, height = 1080, 620
     sc = pg.display.set_mode(size)
     pg.display.set_caption('Танчики')
+    pg.display.set_icon(load_image('tank1.png'))
 
-    screen_number = 1
+    screen_number = 0
     screens = [
         StartScreen(width, height),
         Game(width, height),
@@ -51,7 +52,6 @@ if __name__ == '__main__':
             if event.type == pg.QUIT:
                 pg.quit()
             elif event.type == pg.MOUSEBUTTONDOWN:
-                print(pg.mouse.get_pos())
                 if hasattr(screen, 'btns'):
                     for btn in screen.btns:
                         if btn.rect.collidepoint(pg.mouse.get_pos()):

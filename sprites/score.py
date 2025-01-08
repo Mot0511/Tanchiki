@@ -16,6 +16,7 @@ class Score(pg.sprite.Sprite):
     def update(self):
         self.image = pg.Surface((120, 30), pg.SRCALPHA)
 
+        pg.font.init()
         text = self.font.render(str(self.value), True, (255, 255, 255))
         self.image.blit(text, (0, 0))
 

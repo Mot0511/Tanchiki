@@ -1,20 +1,31 @@
 import pygame as pg
+from random import randrange
 from sprites.borders import Border
 from sprites.lucky import Lucky
 from sprites.score import Score
 from sprites.tank import Tank
-from utils.initMap import initMap
-from utils.load_image import load_image
+from maps.map1 import map1
+from maps.map2 import map2
+from maps.map3 import map3
+from maps.map4 import map4
 from sprites.timer import Timer
 
 class Game:
     def __init__(self, width, height):
         self.bg = pg.Surface((width, height))
-        self.bg.fill(pg.Color('darkgreen'))
         self.all = pg.sprite.Group()
         solids = pg.sprite.Group()
 
-        initMap(self.all, solids, width, height)
+        maps = [
+            map1,
+            map2,
+            map3,
+            map4,
+        ]
+
+        bg_color = maps[randrange(len(maps))](self.all, solids, width, height)
+        # bg_color = maps[3](self.all, solids, width, height)
+        self.bg.fill(bg_color)
 
         self.score1 = Score(self.all, (width - 250, 10), 1)
         self.score2 = Score(self.all, (width - 120, 10), 2)

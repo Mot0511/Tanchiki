@@ -26,7 +26,6 @@ class Lucky(pg.sprite.Sprite):
         if sprites:
             tank = sprites[0]
             self.kill()
-
             high_bonus = random.randrange(1, 10)
             if 1 == high_bonus:
                 tank.dead()
@@ -40,13 +39,9 @@ class Lucky(pg.sprite.Sprite):
                 low_bonus = random.randrange(0, 3)
                 if 0 == low_bonus:
                     tank.v += 0.2
-                    tank.image = pg.transform.scale(tank.image, (tank.rect.width - 3, tank.rect.height - 3))
                     tank.base_image = pg.transform.scale(tank.base_image, (tank.rect.width - 3, tank.rect.height - 3))
-                    x = tank.rect.x
-                    y = tank.rect.y
-                    tank.rect = tank.image.get_rect()
-                    tank.rect.x = x
-                    tank.rect.y = y
+                    tank.rect.width = tank.rect.width - 3
+                    tank.rect.height = tank.rect.height - 3
                     return
 
                 elif 1 == low_bonus:

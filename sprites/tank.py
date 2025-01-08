@@ -20,7 +20,6 @@ class Tank(pg.sprite.Sprite):
         self.image = self.base_image
         self.image = pg.transform.rotate(self.base_image, 180)
         self.rect = self.image.get_rect()
-        self.mask = pg.mask.from_surface(self.image)
         self.rect.topleft = position
         self.v = 5
         self.vx = 0
@@ -71,7 +70,6 @@ class Tank(pg.sprite.Sprite):
         self.going_sound.play()
         match direction:
             case Directions.TOP:
-
                 self.vx = 0
                 self.vy = -self.v
                 self.image = pg.transform.rotate(self.base_image, 180)
@@ -97,6 +95,10 @@ class Tank(pg.sprite.Sprite):
                 self.going_sound.stop()
                 self.vx = 0
                 self.vy = 0
+
+        pos = self.rect.center
+        self.rect = self.image.get_rect()
+        self.rect.center = pos
 
     def increment_score(self):
         self.score.value += 1

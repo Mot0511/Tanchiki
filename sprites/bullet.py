@@ -29,4 +29,4 @@ class Bullet(pg.sprite.Sprite):
                 elif type(enemy).__name__ == 'Tank':
                     enemy.dead()
                 else:
-                    self.shoot_on_wall_sound.play()aw
+                    self.shoot_on_wall_sound.play()
