@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>main</string>
+	<string>Танчики</string>
 	<key>CFBundleExecutable</key>
-	<string>main</string>
+	<string>tanchiki</string>
 	<key>CFBundleIconFile</key>
 	<string>generated-782ea7685b8427d8024172eaee7e3d38fe8448f0c61a470ceec6272102c5a7fe.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>main</string>
+	<string>ru.matveysuvorov.tanchiki</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>main</string>
+	<string>Tanchiki</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.0.0</string>
+	<string>0.1.0</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
 </dict>
