@@ -8,6 +8,8 @@ from sprites.lucky import Lucky
 from utils.load_image import load_image
 from utils.load_sound import load_sound
 from screens.end import End
+from utils.saves import save_game
+import os
 
 if __name__ == '__main__':
     pg.init()
@@ -16,12 +18,16 @@ if __name__ == '__main__':
     pg.display.set_caption('Танчики')
     pg.display.set_icon(load_image('tank1.png'))
 
+
+
     screen_number = 0
     screens = [
         StartScreen(width, height),
         Game(width, height),
         End(width, height),
     ]
+
+
 
     clock = pg.time.Clock()
     running = True
@@ -50,12 +56,18 @@ if __name__ == '__main__':
 
         for event in pg.event.get():
             if event.type == pg.QUIT:
+                map = screen.map_number
+                tank1 = screen.tank1
+                tank2 = screen.tank2
+                save_game(map, screen.timer.value, tank1, tank2)
                 pg.quit()
             elif event.type == pg.MOUSEBUTTONDOWN:
                 if hasattr(screen, 'btns'):
                     for btn in screen.btns:
                         if btn.rect.collidepoint(pg.mouse.get_pos()):
-                            if btn.text == 'Играть' or btn.text == 'Играть снова':
+                            if btn.text == 'Продолжить игру' or btn.text == 'Новая игра' or btn.text == 'Играть снова':
+                                if not btn.text == 'Продолжить игру' and os.path.exists('save.json'):
+                                    os.remove('save.json')
                                 screens[1].__init__(width, height)
                                 screen_number = 1
                                 load_sound('starting.mp3').play()
@@ -67,29 +79,33 @@ if __name__ == '__main__':
                 tank1 = screens[1].tank1
                 tank2 = screens[1].tank2
                 match event.key:
-                    case 27:
+                    case pg.K_ESCAPE:
+                        map = screen.map_number
+                        tank1 = screen.tank1
+                        tank2 = screen.tank2
+                        save_game(map, screen.timer.value, tank1, tank2)
                         screen_number = 0
 
-                    case 1073742055:
+                    case pg.K_PERIOD:
                         tank1.shoot()
-                    case 1073741906:
+                    case pg.K_UP:
                         tank1.set_direction(Directions.TOP)
-                    case 1073741904:
+                    case pg.K_LEFT:
                         tank1.set_direction(Directions.LEFT)
-                    case 1073741905:
+                    case pg.K_DOWN:
                         tank1.set_direction(Directions.BOTTOM)
-                    case 1073741903:
+                    case pg.K_RIGHT:
                         tank1.set_direction(Directions.RIGHT)
 
-                    case 32:
+                    case pg.K_SPACE:
                         tank2.shoot()
-                    case 119:
+                    case pg.K_w:
                         tank2.set_direction(Directions.TOP)
-                    case 97:
+                    case pg.K_a:
                         tank2.set_direction(Directions.LEFT)
-                    case 115:
+                    case pg.K_s:
                         tank2.set_direction(Directions.BOTTOM)
-                    case 100:
+                    case pg.K_d:
                         tank2.set_direction(Directions.RIGHT)
 
             elif event.type == pg.KEYUP:
@@ -107,6 +123,6 @@ if __name__ == '__main__':
         screen.all.update()
         screen.all.draw(sc)
         pg.display.flip()
-        clock.tick(50)
+        clock.tick(50)    
     
     pg.quit()

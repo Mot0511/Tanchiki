@@ -4,9 +4,9 @@ from utils.load_image import load_image
 
 
 class Score(pg.sprite.Sprite):
-    def __init__(self, all, pos, player):
+    def __init__(self, all, pos, player, value):
         super().__init__(all)
-        self.value = 0
+        self.value = value
         self.rect = pg.Rect(pos, (120, 30))
         self.player = player
         self.font = pg.font.Font(None, 50)

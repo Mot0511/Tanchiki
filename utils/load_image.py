@@ -4,7 +4,7 @@ import os
 def load_image(name, colorkey=None):
     fullname = os.path.join('assets', 'images', name)
     try:
-        image = pg.image.load(fullname).convert()
+        image = pg.image.load(fullname)
     except pg.error as message:
         print('Cannot load image:', name)
         raise SystemExit(message)

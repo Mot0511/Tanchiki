@@ -4,27 +4,29 @@ from sprites.bullet import Bullet
 from utils.load_image import load_image
 from enums import Directions
 from utils.load_sound import load_sound
+from sprites.explosion import Explosion
 
 
 class Tank(pg.sprite.Sprite):
-    def __init__(self, all, solids, player, position, score):
+    def __init__(self, all, solids, player, position, spawn_point, score, size, v, bullet_v):
         super().__init__(all)
         self.all = all
         self.solids = solids
         self.add(solids)
         self.player = player
-        self.spawn_point = position
+        self.spawn_point = spawn_point
         self.score = score
         self.base_image = load_image('tank1.png') if player == 1 else load_image('tank2.png')
-        self.base_image = pg.transform.scale(self.base_image, (70, 80))
+        self.base_image = pg.transform.scale(self.base_image, size)
         self.image = self.base_image
         self.image = pg.transform.rotate(self.base_image, 180)
         self.rect = self.image.get_rect()
+        print(position)
         self.rect.topleft = position
-        self.v = 5
+        self.v = v
         self.vx = 0
         self.vy = 0
-        self.bullet_v = 10
+        self.bullet_v = bullet_v
         self.direction = Directions.TOP
         self.going_sound = load_sound('going.mp3')
         self.shoot_sound = load_sound('shoot.mp3')
@@ -44,7 +46,7 @@ class Tank(pg.sprite.Sprite):
                 Bullet(self.all, self.rect.center, self.bullet_v, 0, 180, self)
 
     def dead(self):
-        self.rect.topleft = self.spawn_point
+        Explosion(self.all, self.rect.x, self.rect.y, self)
         self.enemy.increment_score()
         self.bang_sound.play()
         self.shoot_on_tank_sound.play()

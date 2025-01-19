@@ -15,4 +15,4 @@ def map3(all, solids, width, height):
     Wall(all, solids, (130, height - 100), (width // 2 - 180, 10), color)
     Wall(all, solids, (width // 2 + 50, height - 100), (width // 2 - 180, 10), color)
 
-    return pg.Color('lightgrey')
+    return pg.Color('lightblue')
