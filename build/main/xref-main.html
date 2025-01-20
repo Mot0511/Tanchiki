@@ -185,6 +185,7 @@ imports:
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#utils.load_image">utils.load_image</a>
  &#8226;   <a href="#utils.load_sound">utils.load_sound</a>
+ &#8226;   <a href="#utils.saves">utils.saves</a>
  &#8226;   <a href="#warnings">warnings</a>
  &#8226;   <a href="#weakref">weakref</a>
 
@@ -6585,6 +6586,7 @@ imports:
 imported by:
     <a href="#main.py">main.py</a>
  &#8226;   <a href="#sprites.tank">sprites.tank</a>
+ &#8226;   <a href="#utils.saves">utils.saves</a>
 
   </div>
 
@@ -8125,9 +8127,11 @@ imported by:
     <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
+ &#8226;   <a href="#screens.game">screens.game</a>
  &#8226;   <a href="#setuptools._vendor.importlib_metadata">setuptools._vendor.importlib_metadata</a>
  &#8226;   <a href="#setuptools.config._validate_pyproject.error_reporting">setuptools.config._validate_pyproject.error_reporting</a>
  &#8226;   <a href="#setuptools.msvc">setuptools.msvc</a>
+ &#8226;   <a href="#utils.saves">utils.saves</a>
 
   </div>
 
@@ -9586,6 +9590,8 @@ imported by:
  &#8226;   <a href="#pyi_rth_setuptools.py">pyi_rth_setuptools.py</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#runpy">runpy</a>
+ &#8226;   <a href="#screens.game">screens.game</a>
+ &#8226;   <a href="#screens.start_screen">screens.start_screen</a>
  &#8226;   <a href="#setuptools">setuptools</a>
  &#8226;   <a href="#setuptools._core_metadata">setuptools._core_metadata</a>
  &#8226;   <a href="#setuptools._distutils._msvccompiler">setuptools._distutils._msvccompiler</a>
@@ -10802,6 +10808,7 @@ imported by:
  &#8226;   <a href="#sprites.borders">sprites.borders</a>
  &#8226;   <a href="#sprites.bullet">sprites.bullet</a>
  &#8226;   <a href="#sprites.button">sprites.button</a>
+ &#8226;   <a href="#sprites.explosion">sprites.explosion</a>
  &#8226;   <a href="#sprites.lucky">sprites.lucky</a>
  &#8226;   <a href="#sprites.score">sprites.score</a>
  &#8226;   <a href="#sprites.tank">sprites.tank</a>
@@ -11947,10 +11954,12 @@ imported by:
   <a target="code" href="///C:/Users/Matvey/Documents/Tanchiki/screens/game.py" type="text/plain"><tt>screens.game</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#maps.map1">maps.map1</a>
+    <a href="#json">json</a>
+ &#8226;   <a href="#maps.map1">maps.map1</a>
  &#8226;   <a href="#maps.map2">maps.map2</a>
  &#8226;   <a href="#maps.map3">maps.map3</a>
  &#8226;   <a href="#maps.map4">maps.map4</a>
+ &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pygame">pygame</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#screens">screens</a>
@@ -11974,7 +11983,8 @@ imported by:
   <a target="code" href="///C:/Users/Matvey/Documents/Tanchiki/screens/start_screen.py" type="text/plain"><tt>screens.start_screen</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#pygame">pygame</a>
+    <a href="#os">os</a>
+ &#8226;   <a href="#pygame">pygame</a>
  &#8226;   <a href="#screens">screens</a>
  &#8226;   <a href="#sprites.button">sprites.button</a>
  &#8226;   <a href="#sprites.text">sprites.text</a>
@@ -16401,6 +16411,7 @@ imported by:
     <a href="#sprites.borders">sprites.borders</a>
  &#8226;   <a href="#sprites.bullet">sprites.bullet</a>
  &#8226;   <a href="#sprites.button">sprites.button</a>
+ &#8226;   <a href="#sprites.explosion">sprites.explosion</a>
  &#8226;   <a href="#sprites.lucky">sprites.lucky</a>
  &#8226;   <a href="#sprites.score">sprites.score</a>
  &#8226;   <a href="#sprites.tank">sprites.tank</a>
@@ -16467,6 +16478,24 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="sprites.explosion"></a>
+  <a target="code" href="///C:/Users/Matvey/Documents/Tanchiki/sprites/explosion.py" type="text/plain"><tt>sprites.explosion</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#pygame">pygame</a>
+ &#8226;   <a href="#sprites">sprites</a>
+ &#8226;   <a href="#utils.load_image">utils.load_image</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#sprites.tank">sprites.tank</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="sprites.lucky"></a>
   <a target="code" href="///C:/Users/Matvey/Documents/Tanchiki/sprites/lucky.py" type="text/plain"><tt>sprites.lucky</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -16513,6 +16542,7 @@ imports:
  &#8226;   <a href="#pygame">pygame</a>
  &#8226;   <a href="#sprites">sprites</a>
  &#8226;   <a href="#sprites.bullet">sprites.bullet</a>
+ &#8226;   <a href="#sprites.explosion">sprites.explosion</a>
  &#8226;   <a href="#utils.load_image">utils.load_image</a>
  &#8226;   <a href="#utils.load_sound">utils.load_sound</a>
 
@@ -16520,6 +16550,7 @@ imports:
   <div class="import">
 imported by:
     <a href="#screens.game">screens.game</a>
+ &#8226;   <a href="#utils.saves">utils.saves</a>
 
   </div>
 
@@ -18290,6 +18321,7 @@ imported by:
 imported by:
     <a href="#utils.load_image">utils.load_image</a>
  &#8226;   <a href="#utils.load_sound">utils.load_sound</a>
+ &#8226;   <a href="#utils.saves">utils.saves</a>
 
   </div>
 
@@ -18311,6 +18343,7 @@ imported by:
  &#8226;   <a href="#screens.end">screens.end</a>
  &#8226;   <a href="#screens.start_screen">screens.start_screen</a>
  &#8226;   <a href="#sprites.bullet">sprites.bullet</a>
+ &#8226;   <a href="#sprites.explosion">sprites.explosion</a>
  &#8226;   <a href="#sprites.lucky">sprites.lucky</a>
  &#8226;   <a href="#sprites.score">sprites.score</a>
  &#8226;   <a href="#sprites.tank">sprites.tank</a>
@@ -18335,6 +18368,25 @@ imported by:
     <a href="#main.py">main.py</a>
  &#8226;   <a href="#sprites.bullet">sprites.bullet</a>
  &#8226;   <a href="#sprites.tank">sprites.tank</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="utils.saves"></a>
+  <a target="code" href="///C:/Users/Matvey/Documents/Tanchiki/utils/saves.py" type="text/plain"><tt>utils.saves</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#enums">enums</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#sprites.tank">sprites.tank</a>
+ &#8226;   <a href="#utils">utils</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
 
   </div>
 
