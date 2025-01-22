@@ -26,9 +26,9 @@ class End:
                 return
 
             case 1:
-                self.text = Text(self.all, 'Выйграл синий танк', 60, 420, (self.width // 2, 200), pg.Color('lightblue'))
+                self.text = Text(self.all, 'Выиграл синий танк', 60, 420, (self.width // 2, 200), pg.Color('lightblue'))
                 return
 
             case 2:
-                self.text = Text(self.all, 'Выйграл красный танк', 60, 470, (self.width // 2, 200), pg.Color('red'))
+                self.text = Text(self.all, 'Выиграл красный танк', 60, 470, (self.width // 2, 200), pg.Color('red'))
                 return

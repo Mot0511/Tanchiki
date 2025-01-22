@@ -56,10 +56,11 @@ if __name__ == '__main__':
 
         for event in pg.event.get():
             if event.type == pg.QUIT:
-                map = screen.map_number
-                tank1 = screen.tank1
-                tank2 = screen.tank2
-                save_game(map, screen.timer.value, tank1, tank2)
+                if screen_number == 1: 
+                    map = screen.map_number
+                    tank1 = screen.tank1
+                    tank2 = screen.tank2
+                    save_game(map, screen.timer.value, tank1, tank2)
                 pg.quit()
             elif event.type == pg.MOUSEBUTTONDOWN:
                 if hasattr(screen, 'btns'):

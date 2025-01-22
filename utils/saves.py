@@ -25,7 +25,7 @@ def save_game(map, seconds, tank1: Tank, tank2: Tank):
             'score': tank2.score.value
         }
     }
-    print(1)
+
     with open('save.json', 'w') as file:
         text = json.dumps(data)
         file.write(text)
